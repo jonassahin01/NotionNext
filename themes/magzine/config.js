@@ -1,115 +1,103 @@
 const CONFIG = {
-  // 首屏信息栏按钮文字
-  MAGZINE_HOME_BANNER_ENABLE: true, // 首屏右上角的宣传位
+  // First screen information banner button text
+  MAGZINE_HOME_BANNER_ENABLE: true, // Display the banner in the top right corner
   MAGZINE_HOME_BUTTON: true,
   MAGZINE_HOME_BUTTON_URL: '/about',
-  MAGZINE_HOME_BUTTON_TEXT: '了解更多',
+  MAGZINE_HOME_BUTTON_TEXT: 'Learn More',
 
-  MAGZINE_HOME_HIDDEN_CATEGORY: '分享杂文', //不希望在首页展示的文章分类，用英文逗号隔开
+  MAGZINE_HOME_HIDDEN_CATEGORY: 'Share Essays', // Hide specific categories on the homepage (comma-separated in English)
 
-  MAGZINE_HOME_TITLE: '立即开创您的在线业务。完全免费。',
+  MAGZINE_HOME_TITLE: 'Embrace Confidence and Passion – Join My Journey.',
   MAGZINE_HOME_DESCRIPTION:
-    '借助NotionNext，获得助您开创、经营和扩展业务所需的全部工具和帮助。',
-  MAGZINE_HOME_TIPS: 'AI时代来临，这是属于超级个体的狂欢盛宴！',
+    'Step into my world of gaming, cooking, and exclusive content. Real, natural, and confidently me – this is more than just a page, it’s a lifestyle.',
+  MAGZINE_HOME_TIPS:
+    'Confidence comes with age, and I’m here to show you what experience can truly offer. 🌟',
 
-  // 首页底部推荐文章标签, 例如 [推荐] , 最多六篇文章; 若留空白''，则推荐最近更新文章
-  MAGZINE_RECOMMEND_POST_TAG: '推荐',
+  // Recommended articles tags (max six), leave blank for latest posts
+  MAGZINE_RECOMMEND_POST_TAG: 'Recomended',
   MAGZINE_RECOMMEND_POST_COUNT: 6,
-  MAGZINE_RECOMMEND_POST_TITLE: '推荐文章',
-  MAGZINE_RECOMMEND_POST_SORT_BY_UPDATE_TIME: false, // 推荐文章排序，为`true`时将强制按最后修改时间倒序
+  MAGZINE_RECOMMEND_POST_TITLE: 'Recommended Content',
+  MAGZINE_RECOMMEND_POST_SORT_BY_UPDATE_TIME: false, // Sort by last updated time if true
 
-  // Style
-  MAGZINE_RIGHT_PANEL_DARK: process.env.NEXT_PUBLIC_MAGZINE_RIGHT_DARK || false, // 右侧面板深色模式
+  // Style settings
+  MAGZINE_RIGHT_PANEL_DARK: process.env.NEXT_PUBLIC_MAGZINE_RIGHT_DARK || false, // Dark mode for right panel
 
-  MAGZINE_POST_LIST_COVER: true, // 文章列表显示图片封面
-  MAGZINE_POST_LIST_PREVIEW: true, // 列表显示文章预览
-  MAGZINE_POST_LIST_CATEGORY: true, // 列表显示文章分类
-  MAGZINE_POST_LIST_TAG: true, // 列表显示文章标签
+  MAGZINE_POST_LIST_COVER: true, // Show post cover images
+  MAGZINE_POST_LIST_PREVIEW: true, // Show preview of articles
+  MAGZINE_POST_LIST_CATEGORY: true, // Show post categories
+  MAGZINE_POST_LIST_TAG: true, // Show post tags
 
-  MAGZINE_POST_DETAIL_CATEGORY: true, // 文章显示分类
-  MAGZINE_POST_DETAIL_TAG: true, // 文章显示标签
+  MAGZINE_POST_DETAIL_CATEGORY: true, // Show category on post detail page
+  MAGZINE_POST_DETAIL_TAG: true, // Show tags on post detail page
 
-  // 文章页面联系卡
-  MAGZINE_SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
-  MAGZINE_SOCIAL_CARD_TITLE_1: '交流频道',
-  MAGZINE_SOCIAL_CARD_TITLE_2: '加入社群讨论分享',
-  MAGZINE_SOCIAL_CARD_TITLE_3: '点击加入社群',
-  MAGZINE_SOCIAL_CARD_URL: 'https://docs.tangly1024.com/article/chat-community',
+  // Article page contact card
+  MAGZINE_SOCIAL_CARD: true, // Show contact/social community button on the side
+  MAGZINE_SOCIAL_CARD_TITLE_1: 'Connect with Me',
+  MAGZINE_SOCIAL_CARD_TITLE_2: null,
+  MAGZINE_SOCIAL_CARD_TITLE_3: 'Click to connect and get closer!',
+  MAGZINE_SOCIAL_CARD_URL: 'https://linktocommunity.com', // Replace with your actual social community link
 
-  // 页脚菜单
+  // Footer menu links
   MAGZINE_FOOTER_LINKS: [
     {
-      name: '友情链接',
+      name: 'My Content',
       menus: [
         {
-          title: 'Tangly的学习笔记',
-          href: 'https://blog.tangly1024.com'
+          title: 'About Me',
+          href: '/about' // Update to your about page URL
         },
         {
-          title: 'NotionNext',
-          href: 'https://www.tangly1024.com'
+          title: 'Cooking & Recipes',
+          href: '/cooking' // Link to your cooking posts or content
+        },
+        {
+          title: 'Gaming',
+          href: '/gaming' // Link to your gaming posts or streams
+        },
+        {
+          title: 'My OnlyFans',
+          href: 'https://onlyfans.com/yourprofile' // Update with your actual OnlyFans link
         }
       ]
     },
     {
-      name: '开发者',
+      name: 'Social Media',
       menus: [
-        { title: 'Github', href: 'https://github.com/tangly1024/NotionNext' },
+        { title: 'Instagram', href: 'https://www.instagram.com/yourprofile' },
+        { title: 'Twitter', href: 'https://twitter.com/yourprofile' },
+        { title: 'TikTok', href: 'https://www.tiktok.com/@yourprofile' },
+        { title: 'Facebook', href: 'https://www.facebook.com/yourprofile' }
+      ]
+    },
+    {
+      name: 'Support',
+      menus: [
         {
-          title: '开发帮助',
-          href: 'https://docs.tangly1024.com/article/how-to-develop-with-notion-next'
+          title: 'Join My Community',
+          href: 'https://linktocommunity.com'
         },
         {
-          title: '功能反馈',
-          href: 'https://github.com/tangly1024/NotionNext/issues/new/choose'
+          title: 'Exclusive Content',
+          href: 'https://linktoexclusivecontent.com' // Update with your exclusive content link
         },
         {
-          title: '技术讨论',
-          href: 'https://github.com/tangly1024/NotionNext/discussions'
+          title: 'FAQs',
+          href: '/faq' // Link to your FAQs page
         },
         {
-          title: '关于作者',
-          href: 'https://blog.tangly1024.com/about'
+          title: 'Contact Me',
+          href: '/contact' // Link to your contact page
         }
-      ]
-    },
-    {
-      name: '支持',
-      menus: [
-        {
-          title: '站长社群',
-          href: 'https://docs.tangly1024.com/article/chat-community'
-        },
-        {
-          title: '咨询与定制',
-          href: 'https://docs.tangly1024.com/article/my-service'
-        },
-        {
-          title: '升级手册',
-          href: 'https://docs.tangly1024.com/article/my-service'
-        },
-        {
-          title: '安装教程',
-          href: 'https://docs.tangly1024.com/article/how-to-update-notionnext'
-        },
-        { title: 'SEO推广', href: 'https://seo.tangly1024.com/' }
-      ]
-    },
-    {
-      name: '解决方案',
-      menus: [
-        { title: '建站工具', href: 'https://www.tangly1024.com/' },
-        { title: 'NotionNext', href: 'https://docs.tangly1024.com/about' }
       ]
     }
   ],
 
-  // 旧版本顶部菜单
-  MAGZINE_MENU_CATEGORY: true, // 显示分类
-  MAGZINE_MENU_TAG: true, // 显示标签
-  MAGZINE_MENU_ARCHIVE: true, // 显示归档
-  MAGZINE_MENU_SEARCH: true, // 显示搜索
+  // Old version top menu
+  MAGZINE_MENU_CATEGORY: true, // Display categories
+  MAGZINE_MENU_TAG: true, // Display tags
+  MAGZINE_MENU_ARCHIVE: true, // Display archive
+  MAGZINE_MENU_SEARCH: true, // Display search
 
-  MAGZINE_WIDGET_TO_TOP: true // 跳回顶部
+  MAGZINE_WIDGET_TO_TOP: true // Show back-to-top button
 }
 export default CONFIG
