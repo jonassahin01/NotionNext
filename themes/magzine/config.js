@@ -5,7 +5,7 @@ const CONFIG = {
   MAGZINE_HOME_BUTTON_URL: '/about',
   MAGZINE_HOME_BUTTON_TEXT: 'Learn More',
 
-  MAGZINE_HOME_HIDDEN_CATEGORY: 'Share Essays', // Hide specific categories on the homepage (comma-separated in English)
+  MAGZINE_HOME_HIDDEN_CATEGORY: 'Erotica', // Hide specific categories on the homepage (comma-separated in English)
 
   MAGZINE_HOME_TITLE: 'Embrace Confidence and Passion – Join My Journey.',
   MAGZINE_HOME_DESCRIPTION:
@@ -35,7 +35,7 @@ const CONFIG = {
   MAGZINE_SOCIAL_CARD_TITLE_1: 'Connect with Me',
   MAGZINE_SOCIAL_CARD_TITLE_2: null,
   MAGZINE_SOCIAL_CARD_TITLE_3: 'Click to connect and get closer!',
-  MAGZINE_SOCIAL_CARD_URL: 'https://linktocommunity.com', // Replace with your actual social community link
+  MAGZINE_SOCIAL_CARD_URL: 'https://onlyfans.com/sofiaavallone', // Replace with your actual social community link
 
   // Footer menu links
   MAGZINE_FOOTER_LINKS: [
@@ -56,16 +56,19 @@ const CONFIG = {
         },
         {
           title: 'My OnlyFans',
-          href: 'https://onlyfans.com/yourprofile' // Update with your actual OnlyFans link
+          href: 'https://onlyfans.com/sofiaavallone' // Update with your actual OnlyFans link
         }
       ]
     },
     {
       name: 'Social Media',
       menus: [
-        { title: 'Instagram', href: 'https://www.instagram.com/yourprofile' },
-        { title: 'Twitter', href: 'https://twitter.com/yourprofile' },
-        { title: 'TikTok', href: 'https://www.tiktok.com/@yourprofile' },
+        {
+          title: 'Instagram',
+          href: 'https://www.instagram.com/sofiaavallone22/'
+        },
+        { title: 'Twitter', href: 'https://x.com/AvalloneSofia1' },
+        { title: 'TikTok', href: 'https://www.tiktok.com/@sofiaavallone' },
         { title: 'Facebook', href: 'https://www.facebook.com/yourprofile' }
       ]
     },
@@ -74,11 +77,11 @@ const CONFIG = {
       menus: [
         {
           title: 'Join My Community',
-          href: 'https://linktocommunity.com'
+          href: 'https://onlyfans.com/sofiaavallone'
         },
         {
           title: 'Exclusive Content',
-          href: 'https://linktoexclusivecontent.com' // Update with your exclusive content link
+          href: 'https://onlyfans.com/sofiaavallone' // Update with your exclusive content link
         },
         {
           title: 'FAQs',
