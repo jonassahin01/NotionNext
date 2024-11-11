@@ -73,11 +73,11 @@ const CONFIG = {
       ]
     },
     {
-      name: 'Support',
+      name: 'Additional Content',
       menus: [
         {
-          title: 'Join My Community',
-          href: 'https://onlyfans.com/sofiaavallone'
+          title: 'Shop',
+          href: 'https://shop.sofiaavallone.com/'
         },
         {
           title: 'Exclusive Content',
