@@ -36,6 +36,7 @@ import { CTA } from './components/CTA'
 import { SignInForm } from './components/SignInForm'
 import { SignUpForm } from './components/SignUpForm'
 import { SVG404 } from './components/svg/SVG404'
+import RevenueSlider from './components/RevenueSlider'
 
 /**
  * 布局框架
@@ -88,13 +89,13 @@ const LayoutIndex = props => {
       {/* 英雄区 */}
       {siteConfig('STARTER_HERO_ENABLE', true, CONFIG) && <Hero {...props} />}
       {/* 合作伙伴 */}
-      {siteConfig('STARTER_BRANDS_ENABLE', true, CONFIG) && <Brand />}
+      {siteConfig('STARTER_BRANDS_ENABLE', false, CONFIG) && <Brand />}
       {/* 产品特性 */}
       {siteConfig('STARTER_FEATURE_ENABLE', true, CONFIG) && <Features />}
       {/* 关于 */}
       {siteConfig('STARTER_ABOUT_ENABLE', true, CONFIG) && <About />}
       {/* 价格 */}
-      {siteConfig('STARTER_PRICING_ENABLE', true, CONFIG) && <Pricing />}
+      {siteConfig('STARTER_PRICING_ENABLE', false, CONFIG) && <Pricing />}
       {/* 评价展示 */}
       {siteConfig('STARTER_TESTIMONIALS_ENABLE', true, CONFIG) && (
         <Testimonials />
@@ -117,6 +118,10 @@ const LayoutIndex = props => {
       )}
       {/* 联系方式 */}
       {siteConfig('STARTER_CONTACT_ENABLE', true, CONFIG) && <Contact />}
+      {/* Insert RevenueSlider between Features and About */}
+      {siteConfig('STARTER_REVENUE_SLIDER_ENABLE', null, CONFIG) && (
+        <RevenueSlider />
+      )}
 
       {/* 行动呼吁 */}
       {siteConfig('STARTER_CTA_ENABLE', true, CONFIG) && <CTA />}

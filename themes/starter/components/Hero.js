@@ -78,16 +78,21 @@ export const Hero = props => {
                   data-wow-delay='.25s'>
                   <div className='mt-16'>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <iframe
+                      width='840'
+                      height='472'
+                      title='YouTube video player'
+                      frameborder='0'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                      referrerpolicy='strict-origin-when-cross-origin'
+                      allowfullscreen
                       src={siteConfig(
                         'STARTER_HERO_PREVIEW_IMAGE',
                         null,
                         CONFIG
                       )}
-                      alt={siteConfig('TITLE', null, CONFIG)}
-                      title={siteConfig('TITLE', null, CONFIG)}
-                      className='mx-auto max-w-full rounded-t-xl rounded-tr-xl'
-                    />
+                      alt='hero'
+                      className='mx-auto max-w-full rounded-t-xl rounded-tr-xl'></iframe>
                   </div>
 
                   {/* 背景图 */}
