@@ -25,10 +25,7 @@ import CONFIG from './config'
 import { Style } from './style'
 // import { MadeWithButton } from './components/MadeWithButton'
 import Comment from '@/components/Comment'
-import replaceSearchResult from '@/components/Mark'
 import ShareBar from '@/components/ShareBar'
-import DashboardBody from '@/components/ui/dashboard/DashboardBody'
-import DashboardHeader from '@/components/ui/dashboard/DashboardHeader'
 import { useGlobal } from '@/lib/global'
 import { loadWowJS } from '@/lib/plugins/wow'
 import { SignIn, SignUp } from '@clerk/nextjs'
@@ -36,10 +33,10 @@ import Link from 'next/link'
 import { ArticleLock } from './components/ArticleLock'
 import { Banner } from './components/Banner'
 import { CTA } from './components/CTA'
-import SearchInput from './components/SearchInput'
 import { SignInForm } from './components/SignInForm'
 import { SignUpForm } from './components/SignUpForm'
 import { SVG404 } from './components/svg/SVG404'
+import RevenueSlider from './components/RevenueSlider'
 
 /**
  * 布局框架
@@ -65,9 +62,7 @@ const LayoutBase = props => {
       {/* 页头 */}
       <Header {...props} />
 
-      <div id='main-wrapper' className='grow'>
-        {children}
-      </div>
+      {children}
 
       {/* 页脚 */}
       <Footer {...props} />
@@ -94,13 +89,13 @@ const LayoutIndex = props => {
       {/* 英雄区 */}
       {siteConfig('STARTER_HERO_ENABLE', true, CONFIG) && <Hero {...props} />}
       {/* 合作伙伴 */}
-      {siteConfig('STARTER_BRANDS_ENABLE', true, CONFIG) && <Brand />}
+      {siteConfig('STARTER_BRANDS_ENABLE', false, CONFIG) && <Brand />}
       {/* 产品特性 */}
       {siteConfig('STARTER_FEATURE_ENABLE', true, CONFIG) && <Features />}
       {/* 关于 */}
       {siteConfig('STARTER_ABOUT_ENABLE', true, CONFIG) && <About />}
       {/* 价格 */}
-      {siteConfig('STARTER_PRICING_ENABLE', true, CONFIG) && <Pricing />}
+      {siteConfig('STARTER_PRICING_ENABLE', false, CONFIG) && <Pricing />}
       {/* 评价展示 */}
       {siteConfig('STARTER_TESTIMONIALS_ENABLE', true, CONFIG) && (
         <Testimonials />
@@ -123,6 +118,10 @@ const LayoutIndex = props => {
       )}
       {/* 联系方式 */}
       {siteConfig('STARTER_CONTACT_ENABLE', true, CONFIG) && <Contact />}
+      {/* Insert RevenueSlider between Features and About */}
+      {siteConfig('STARTER_REVENUE_SLIDER_ENABLE', null, CONFIG) && (
+        <RevenueSlider />
+      )}
 
       {/* 行动呼吁 */}
       {siteConfig('STARTER_CTA_ENABLE', true, CONFIG) && <CTA />}
@@ -165,7 +164,7 @@ const LayoutSlug = props => {
           <div id='container-inner' className='w-full p-4'>
             {lock && <ArticleLock validPassword={validPassword} />}
 
-            {!lock && post && (
+            {!lock && (
               <div id='article-wrapper' className='mx-auto'>
                 <NotionPage {...props} />
                 <Comment frontMatter={post} />
@@ -179,65 +178,7 @@ const LayoutSlug = props => {
   )
 }
 
-/**
- * 仪表盘
- * @param {*} props
- * @returns
- */
-const LayoutDashboard = props => {
-  const { post } = props
-
-  return (
-    <>
-      <div className='container grow'>
-        <div className='flex flex-wrap justify-center -mx-4'>
-          <div id='container-inner' className='w-full p-4'>
-            {post && (
-              <div id='article-wrapper' className='mx-auto'>
-                <NotionPage {...props} />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-      {/* 仪表盘 */}
-      <DashboardHeader />
-      <DashboardBody />
-    </>
-  )
-}
-
-/**
- * 搜索
- * @param {*} props
- * @returns
- */
-const LayoutSearch = props => {
-  const { keyword } = props
-  const router = useRouter()
-  const currentSearch = keyword || router?.query?.s
-
-  useEffect(() => {
-    if (isBrowser) {
-      replaceSearchResult({
-        doms: document.getElementById('posts-wrapper'),
-        search: keyword,
-        target: {
-          element: 'span',
-          className: 'text-red-500 border-b border-dashed'
-        }
-      })
-    }
-  }, [])
-  return (
-    <>
-      <section className='max-w-7xl mx-auto bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
-        <SearchInput {...props} />
-        {currentSearch && <Blog {...props} />}
-      </section>
-    </>
-  )
-}
+const LayoutSearch = props => <></>
 
 /**
  * 文章归档
@@ -526,7 +467,6 @@ export {
   LayoutArchive,
   LayoutBase,
   LayoutCategoryIndex,
-  LayoutDashboard,
   LayoutIndex,
   LayoutPostList,
   LayoutSearch,
